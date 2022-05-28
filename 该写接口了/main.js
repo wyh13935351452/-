@@ -3,7 +3,7 @@ import App from './App.vue'
 //引入路由组件
 import router from '@/router'
 //注册全局组件
-import TypNav from '@/components/TypNav'
+import TypNav from '@/pages/Home/TypNav'
 //引入仓库
 import store from '@/store'
 
