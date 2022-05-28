@@ -1,10 +1,18 @@
 import {reqCategoryList} from "@/api"
-const start = {}
-const mutations = {}
+const start = {
+    categoryList:[]
+}
+const mutations = {
+    CATEGORYLIST(state,categoryList){
+        state.categoryList=categoryList
+    }
+}
 const actions = {
-    cargoryList(){
-        let result = reqCategoryList()
-        console.log(result);
+    async categoryList({commit}){
+        let result = await reqCategoryList()
+        if(result.code==200){
+            commit('CATEGORYLIST',result.data)  
+        }
     }
 }
 const getters = {}
