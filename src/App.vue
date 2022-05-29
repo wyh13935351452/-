@@ -21,7 +21,12 @@ export default {
 
     //在页面加载时读取localStorage里的状态信息
     localStorage.getItem("messageStore") && this.$store.replaceState(Object.assign(this.$store.state, JSON.parse(localStorage.getItem("messageStore"))));
-  }
+  },
+  mounted() {
+    //派发action 运行就执行派发三级列表数据只执行一次优化性能
+    this.$store.dispatch('categoryList');
+
+  },
 
 }
 </script>

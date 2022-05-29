@@ -6,7 +6,11 @@ import router from '@/router'
 import TypNav from '@/components/TypNav'
 //引入仓库
 import store from '@/store'
+//引入mockjs
+import '@/mock/mockServe'
 
+//引入swiper样式
+import 'swiper/css/swiper.css'
 //测试 export const reqCategoryList分别暴露就要加{}
 // import {reqCategoryList} from '@/api'
 // reqCategoryList()

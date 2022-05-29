@@ -1,13 +1,16 @@
 <template>
-  <h1>搜索</h1>
+  <div>
+    <TypNav></TypNav>
+  </div>
 </template>
 
 <script>
+
 export default {
 
 }
 </script>
 
-<style>
+<style lang="less" scoped>
 
 </style>
