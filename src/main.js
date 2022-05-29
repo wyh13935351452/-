@@ -4,6 +4,8 @@ import App from './App.vue'
 import router from '@/router'
 //注册全局组件
 import TypNav from '@/components/TypNav'
+//轮播图
+import Carsousel from '@/components/Carsousel'
 //引入仓库
 import store from '@/store'
 //引入mockjs
@@ -15,6 +17,7 @@ import 'swiper/css/swiper.css'
 // import {reqCategoryList} from '@/api'
 // reqCategoryList()
 
+Vue.component(Carsousel.name,Carsousel)
 Vue.component(TypNav.name,TypNav)
 new Vue({
   render: h => h(App),

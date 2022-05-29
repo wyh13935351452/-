@@ -3,18 +3,7 @@
         <div class="sortList clearfix">
             <div class="center">
                 <!--banner轮播-->
-                <div class="swiper-container" ref="mySwiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide" v-for="(carousel) in bannerList" :key="carousel.id">
-                            <img :src="carousel.imgUrl" />
-                        </div>
-                    </div>
-                    <!-- 如果需要分页器 -->
-                    <div class="swiper-pagination"></div>
-                    <!-- 如果需要导航按钮 -->
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-button-next"></div>
-                </div>
+               <Carsousel :list="bannerList"></Carsousel>>
             </div>
             <div class="right">
                 <div class="news">
@@ -101,7 +90,6 @@
 
 <script>
 import { mapState } from 'vuex'
-import Swiper from 'swiper'
 export default {
     mounted() {
         this.$store.dispatch('getBannerList');
@@ -112,29 +100,7 @@ export default {
             bannerList: state => state.home.bannerList
         })
     },
-    watch: {
-        //监听bannerlist数据变化 因为这条数据发生过变化由空->有值 如果bannerlist执行了,数据就有了然后在把轮播图组件扔进去
-        bannerList: {
-            handler(newValue, oldValue) {
-                this.$nextTick(() => {
-                    new Swiper(this.$refs.mySwiper, {
-                        loop: true, // 循环模式选项
-                        // 如果需要分页器
-                        pagination: {
-                            el: '.swiper-pagination',
-                            clickable: true
-                        },
-                        // 如果需要前进后退按钮
-                        navigation: {
-                            nextEl: '.swiper-button-next',
-                            prevEl: '.swiper-button-prev',
-                        },
-
-                    })
-                })
-            }
-        }
-    }
+   
 }
 </script>
 
